@@ -1,0 +1,13 @@
+django==3.2
+Pillow
+# psycopg2
+psycopg2
+dj-database-url
+python-decouple
+gunicorn
+whitenoise
+#IMAGENES
+cloudinary
+
+# Paypal
+django-paypal

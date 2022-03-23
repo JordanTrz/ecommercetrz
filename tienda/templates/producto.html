@@ -1,0 +1,128 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<div id="content" class="site-content">
+    {% csrf_token %}
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main">
+            <div class="cont maincont">
+                <ul class="b-crumbs">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="catalog-gallery.html">Catalog</a></li>
+                    <li>Product</li>
+                </ul>
+                
+                <article>
+                    <div class="prod">
+                        <div class="prod-slider-wrap prod-slider-shown">
+                            <div class="flexslider prod-slider" id="prod-slider">
+                                <ul class="slides">
+                                    <li>
+                                        <!-- <a data-fancybox-group="prod" class="fancy-img"
+                                            href="http://placehold.it/810x722"> -->
+                                            <img src="{{ producto.imagen.url }}" alt="">
+                                        <!-- </a> -->
+                                    </li>
+                                    <li>
+                                        <!-- <a data-fancybox-group="prod" class="fancy-img"
+                                            href="http://placehold.it/800x800"> -->
+                                            <img src="{{ producto.imagen.url }}" alt="">
+                                        <!-- </a> -->
+                                    </li>
+                                </ul>
+                                <div class="prod-slider-count">
+                                    <p><span class="count-cur">1</span> / <span class="count-all">2</span></p>
+                                    <p class="hover-label prod-slider-zoom"><i class="icon ion-search"></i><span>Zoom
+                                            In</span></p>
+                                </div>
+                            </div>
+                            <div class="flexslider prod-thumbs" id="prod-thumbs">
+                                <ul class="slides">
+                                    <li>
+                                        <img src="{{ producto.imagen.url }}" alt="">
+                                    </li>
+                                    <li>
+                                        <img src="{{ producto.imagen.url }}" alt="">
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="prod-cont">
+                            <div class="prod-rating-wrap">
+                                <p data-rating="4" class="prod-rating">
+                                    <i class="rating-ico" title="1"></i><i class="rating-ico" title="2"></i><i
+                                        class="rating-ico" title="3"></i><i class="rating-ico" title="4"></i><i
+                                        class="rating-ico" title="5"></i>
+                                </p>
+                                <p class="prod-rating-count">7</p>
+                            </div>
+                            <p class="prod-categs">{{ producto.categoria.nombre }}</p>
+                            <h1>{{ producto.nombre }}</h1>
+                            <div class="variations_form cart">
+                                <p class="prod-price">S/ {{ producto.precio }}</p>
+                                <p class="prod-excerpt">{{ producto.nombre }}</p>
+                                <div class="prod-add">
+                                    <div class="variations">
+                                        <!-- <div class="variations-row">
+                                            <div class="label"><label>Сolor</label></div>
+                                            <div class="value">
+                                                <select>
+                                                    <option value="">Choose an option</option>
+                                                    <option value="blue">Blue</option>
+                                                    <option value="green">Green</option>
+                                                    <option value="yellow">Yellow</option>
+                                                </select>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                    <button type="submit" class="button"><i class="icon ion-android-cart"></i> <a style="color: white;"
+                                        href="{% url 'tienda:agregarCarrito' producto.id %}">Agregar al carrito</a></button>
+                                    <p class="qnt-wrap prod-li-qnt">
+                                        <a href="#" class="qnt-plus prod-li-plus"><i
+                                                class="icon ion-arrow-up-b"></i></a>
+                                        <input type="text" value="1">
+                                        <a href="#" class="qnt-minus prod-li-minus"><i
+                                                class="icon ion-arrow-down-b"></i></a>
+                                    </p>
+                                    <!-- <div class="prod-li-favorites">
+                                        <a href="wishlist.html" class="hover-label add_to_wishlist"><i
+                                                class="icon ion-heart"></i><span>Add to Wishlist</span></a>
+                                    </div>
+                                    <p class="prod-li-compare">
+                                        <a href="compare.html"
+                                            class="hover-label prod-li-compare-btn"><span>Compare</span><i
+                                                class="icon ion-arrow-swap"></i></a>
+                                    </p> -->
+                                </div>
+                            </div>
+                            <div class="prod-props">
+                                <dl class="product_meta">
+                                    <dt>SKU:</dt>
+                                    <dd>2135687</dd>
+                                    <dt>Marca:</dt>
+                                    <dd><a href="#">BMP</a></dd>
+                                    <dt>Peso</dt>
+                                    <dd>500 gr</dd>
+                                    <dt>Dimensiones</dt>
+                                    <dd>4 x 50 cm</dd>
+                                    <dt>Сolor</dt>
+                                    <dd>Verde, Azul</dd>
+                                    <dt>Fabricación:</dt>
+                                    <dd>China</dd>
+                                    <dt>Material:</dt>
+                                    <dd>Algodón</dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <p class="prod-badge">
+                            <span class="badge-1">TOP SELLER</span>
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </main>
+    </div>
+</div>
+
+{% endblock %}

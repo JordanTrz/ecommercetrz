@@ -1,0 +1,4 @@
+.env
+Procfile
+db.sqlite3
+static/
